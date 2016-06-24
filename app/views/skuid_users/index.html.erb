@@ -1,0 +1,29 @@
+<h1>The Lion Tribe</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>type</th>
+      <th>Age</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @SkdUser.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.type %></td>
+        <td><%= user.age %></td>
+        <td><%= link_to 'Show', her_app_skuid_user_path(user.type, user) %></td>
+        <td><%= link_to 'Edit', her_app_skuid_user_path(user.type, user, :edit) %></td>
+        <td><%= link_to 'Destroy', her_app_skuid_user_path(user.type, user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "See all #{animal.type.pluralize}", her_app_skuid_user_path(user.type) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New #{@type}", her_app_skuid_user_path(@type, nil, :new) %>
+<%= link_to 'See all animals', her_app_skuid_user_path %>
